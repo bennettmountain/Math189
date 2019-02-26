@@ -233,7 +233,7 @@ def accuracy_vs_lambda(X_train, y_train_OH, X_test, y_test, lambda_list):
 	# TODO: Find corresponding accuracy values for each parameter
 
 	for reg in lambda_list:
-		W , nll_list = grad_descent(X_train, y_train, reg = reg, lr = 2e-5, print_freq = 50)
+		W , nll_list = grad_descent(X_train, y_train_OH, reg = reg, lr = 2e-5, print_freq = 50)
 		y_pred = predict(X_test, W)
 		accuracy = get_accuracy(y_pred, y_test)
 		accu_list.append(accuracy)
